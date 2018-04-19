@@ -1,0 +1,2 @@
+Tecnicas de Programacao I
+Apenas um teste para a leitura de arquivos TXT
