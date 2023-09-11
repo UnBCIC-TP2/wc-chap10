@@ -16,10 +16,10 @@ trait Iterator[T] {
 /***
   * Um data storage manager baseado em arquivos.  
   */ 
-class DataStorageManager(val path: String) extends Iterator[String] {
+class DataStorageManager(val path: Source) extends Iterator[String] {
 
   // ------------ construtor -------------//
-  val lines: List[String] = Source.fromFile(path).getLines.toList
+  val lines: List[String] = path.getLines.toList
   var words: MutableList[String] = new MutableList[String]()
 
   lines.foreach((s: String) => words ++= s.split(" ").toList)

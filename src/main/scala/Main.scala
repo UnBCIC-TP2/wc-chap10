@@ -1,5 +1,6 @@
 import java.io.File
 import java.io.PrintWriter
+import scala.io.Source
 
 import wc._
 
@@ -10,15 +11,17 @@ object MainProgram extends CliMain[Unit] (
   description="a simple word count implementation using the \"Things\" style") {
 
   var input = arg[String](description = "the input file")
+  var stopWordsPath = arg[String](description = "path to the stop words file")
   var size  = opt[Int](default = 20)
 
   def run: Unit = {
-    val sm = new DataStorageManager(input)
+    val sm = new DataStorageManager(Source.fromFile(input))
+    val sw = new StopWord(Source.fromFile(stopWordsPath))
     val wf = new WordFrequencyManager()
 
     while(sm.hasNext) {
       val word = sm.next()
-      if(!StopWord.isStopWord(word)) {
+      if(!sw.isStopWord(word)) {
         wf.mapWord(word)
       }
     }

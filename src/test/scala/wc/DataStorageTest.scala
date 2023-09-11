@@ -5,14 +5,14 @@ import org.scalatest.Matchers
 import org.scalatest.GivenWhenThen
 import org.scalatest.BeforeAndAfter
 
+import scala.io.Source
 
 class DataStorageTest extends FlatSpec with Matchers with GivenWhenThen {
   behavior of "A DataStorage"
 
-  it should "return when we call DataStorage(\"teste.txt\").size" in {
-    val ds = new DataStorageManager("teste.txt")
-
-    ds.size should be (7) 
+  it should "return when we call DataStorage(\"frankstein.txt\").size" in {
+    val ds = new DataStorageManager(Source.fromResource("frankstein.txt"))
+    ds.size should be (35245) 
   }
 
 }
