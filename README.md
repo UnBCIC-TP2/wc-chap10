@@ -18,7 +18,7 @@ $ sbt assembly
 ## Execução do programa (via sbt) 
 
 ```{shell} 
-$ sbt "run <input-file> <stop-words>
+$ sbt "run <input-file> <stop-words>"
 ```
 
 
