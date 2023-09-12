@@ -1,4 +1,4 @@
-package wc
+package br.unb.cic.wc10
 
 import scala.collection.mutable.HashMap
 import scala.collection.immutable.ListMap

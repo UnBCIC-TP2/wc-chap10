@@ -1,4 +1,4 @@
-package wc
+package br.unb.cic.wc10
 
 import scala.io.Source
 import scala.collection.mutable.MutableList
@@ -22,7 +22,7 @@ class DataStorageManager(val path: Source) extends Iterator[String] {
   val lines: List[String] = path.getLines.toList
   var words: MutableList[String] = new MutableList[String]()
 
-  lines.foreach((s: String) => words ++= s.split(" ").toList)
+  lines.foreach(s => words ++= s.split(" ").toList)
 
   words = words.filter(s => s.size > 3) 
 

@@ -1,12 +1,11 @@
+import br.unb.cic.wc10.{DataStorageManager, StopWordManager, WordFrequencyManager}
+
 import java.io.File
 import java.io.PrintWriter
 import scala.io.Source
-
-import wc._
-
 import org.backuity.clist._
 
-object MainProgram extends CliMain[Unit] (
+object Controller extends CliMain[Unit] (
   name="Word Count",
   description="a simple word count implementation using the \"Things\" style") {
 
@@ -16,7 +15,7 @@ object MainProgram extends CliMain[Unit] (
 
   def run: Unit = {
     val sm = new DataStorageManager(Source.fromFile(input))
-    val sw = new StopWord(Source.fromFile(stopWordsPath))
+    val sw = new StopWordManager(Source.fromFile(stopWordsPath))
     val wf = new WordFrequencyManager()
 
     while(sm.hasNext) {

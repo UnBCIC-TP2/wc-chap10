@@ -1,4 +1,4 @@
-package wc
+package br.unb.cic.wc10
 
 import org.scalatest.FlatSpec
 import org.scalatest.Matchers

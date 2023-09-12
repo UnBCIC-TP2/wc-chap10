@@ -1,9 +1,8 @@
-package wc
+package br.unb.cic.wc10
 
 import org.scalatest.FlatSpec
 import org.scalatest.Matchers
 import org.scalatest.GivenWhenThen
-import org.scalatest.BeforeAndAfter
 
 import scala.io.Source
 
